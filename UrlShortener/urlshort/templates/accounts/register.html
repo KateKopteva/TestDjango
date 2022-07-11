@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-lg-6 col-xl-7" style="padding-top: 30px; padding-bottom: 30px">
+        <div class="card text-black" style="border-radius: 25px;" >
+            <div class="card-body p-md-8 ">
+                <div class="row justify-content-center">
+                    <p class="text-center display-5 fw-bolder"><small>Регистрация</small></p>
+                    <form class="mx-1 mx-md-4" method="post">
+                        {% csrf_token %}
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                                <p><label class="form-label"><small><small>{{ register_form.as_p }}{{ register_form.errors }}</small></small></label></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            <button class="btn btn-primary" type="submit">Регистрация</button>
+                        </div>
+                    </form>
+                    <p class="text-center">Уже регистрировались? <a href="/accounts/login">Вход</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
